@@ -21,7 +21,9 @@ const SignUp = ({ navigate }) => {
     })
       .then(response => {
         if(response.status === 201) {
-          navigate('/login')
+          console.log("Success")
+
+          // navigate('/login')
         } else {
           setError("Email already exists")
           setUserName("")
