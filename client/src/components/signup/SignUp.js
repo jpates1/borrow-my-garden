@@ -7,6 +7,7 @@ const SignUp = ({ navigate }) => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -22,6 +23,10 @@ const SignUp = ({ navigate }) => {
         if(response.status === 201) {
           navigate('/login')
         } else {
+          setError("Email already exists")
+          setUserName("")
+          setEmail("")
+          setPassword("")
           navigate('/signup')
         }
       })
@@ -48,6 +53,12 @@ const SignUp = ({ navigate }) => {
           <input placeholder="Email" id="email" type='text' value={ email } onChange={handleEmailChange} />
           <input placeholder="Password" id="password" type='password' value={ password } onChange={handlePasswordChange} />
         <button id='submit' type="submit" value="Submit">Sign Up</button>
+        {error && (
+            <div className="alert alert-danger">
+              {error}
+              <a href="/login">Please login</a>{" "}
+            </div>
+        )}
       </form>
       </div> 
     );
