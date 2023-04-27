@@ -1,4 +1,4 @@
-const User = require("../models/user");
+const User = require("../models/user.model");
 const TokenGenerator = require("../models/token_generator");
 const UsersController = {
   Index: (req, res) => {
