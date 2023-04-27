@@ -1,3 +1,71 @@
+<h1 align="center" style="display: block; font-size: 2.5em; font-weight: bold; margin-block-start: 1em; margin-block-end: 1em;">
+<a name="logo" href="https://www.aregtech.com"><img align="center" src="https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/areg-sdk-1280x360px-logo.png" alt="AREG SDK Home" style="width:100%;height:100%"/></a>
+  <br /><br /><strong>BORROW MY GARDEN</strong>
+</h1>
+
+# Borrow My Garden
+
+## Introduction
+
+Borrow My Garden is a community project which connects those with to those without a garden.
+
+The app simultaneously addresses three core issues that we face within UK society:
+
+- Lack of available Allotment plots
+- Uk Mental Health crisis
+- Cost of living crisis
+
+Users of Borrow My Garden will be able to
+
+- Sign Up
+- List their garden
+- Browse all listed gardens
+- Connect with garden owners
+
+## Table of contents (#tableofcontents)
+
+- [Motivation](#motivation)
+- [Composition] (#composition)
+- [Software build](#software-build)
+  - [Clone sources](#clone-sources)
+  - [Build with `cmake`](#build-with-cmake)
+  - [Build with `make`](#build-with-make)
+  - [Build with `msbuild`](#build-with-msbuild)
+  - [Build with IDE](#build-with-ide)
+- [Integration](#integration)
+  - [Integrate for development](#integrate-for-development)
+  - [Configure multicast router](#configure-multicast-router)
+  - [Configure logging](#configure-logging)
+- [Roadmap](#roadmap)
+- [Interface-centricity](#interface-centricity)
+- [More than embedded](#more-than-embedded)
+- [Use cases and benefits](#use-cases-and-benefits)
+  - [Distributed solution](#distributed-solution)
+  - [Driverless devices](#driverless-devices)
+  - [Real-time solutions](#real-time-solutions)
+  - [Digital twin](#digital-twin)
+  - [Simulation and tests](#simulation-and-tests)
+- [Examples](#examples)
+- [License](#license)
+- [Call to action](#call-to-action)
+
+# Background
+
+**Lack of Allotment spaces**
+Demand for allotment spaces has risen by over 200% in recent years and wait lists for a plot are often exceeding 15 years.
+In tandem with this increased desire for a small plot of land, since the 1950s there has been a reduction of 65% on allotment land in the UK. Sheffield univeristy
+Borrow My Garden serves dramatically increase the availability of green growing spaces.
+
+**UK Mental Health Crisis**
+Our increasingly busy and stressful lives have resulted in a mental Health crisis across the UK. Contibuting factors include - lack of community, increased screen time, social media, a distancing from nature. It is proven that gardening reduces depression, anxiety and other stress related symptoms.
+Borrow My Garden directly will make it easy for users to reap the benefits of gardening. It will also connect neighbours and establish strong community bonding.
+
+**The Cost of Living**
+The cost of living in the UK is soaring with food prices being particularly affected.
+Borrow My Garden will give users the opportunity to grow their own food and by doing so significantly reduce their cost of living.
+
+<div align="right">[ <a href="#table-of-contents">↑ to top ↑</a> ]</div>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
