@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
  
-export default function SignUp() {
+export default function Create() {
  const [form, setForm] = useState({
    userName: "",
    email: "",
@@ -20,9 +20,23 @@ export default function SignUp() {
  async function onSubmit(e) {
    e.preventDefault();
  
-   // When a post request is sent to the create url, we'll add a new record to the database.
+   // When a post request is sent to the create url, we'll add a new user to the database.
    const newPerson = { ...form };
  
+  // fetch("http://localhost:2000/user/add", {
+  //    method: "POST",
+  //    headers: {
+  //      "Content-Type": "application/json",
+  //    },
+  //    body: JSON.stringify(newPerson),
+  // })
+  //  .then(response => response.json())
+  //  .then(data => console.log(data))
+  //  .catch(error => {
+  //    window.alert(error);
+  //    return;
+  //  });
+     
    await fetch("http://localhost:2000/user/add", {
      method: "POST",
      headers: {
@@ -45,17 +59,17 @@ export default function SignUp() {
      <h3>Create New Record</h3>
      <form onSubmit={onSubmit}>
        <div className="form-group">
-         <label htmlFor="username">Name</label>
+         <label htmlFor="userName">Name</label>
          <input
            type="text"
            className="form-control"
-           id="username"
+           id="userName"
            value={form.userName}
            onChange={(e) => updateForm({ userName: e.target.value })}
          />
        </div>
        <div className="form-group">
-         <label htmlFor="email">Position</label>
+         <label htmlFor="email">Email</label>
          <input
            type="text"
            className="form-control"
