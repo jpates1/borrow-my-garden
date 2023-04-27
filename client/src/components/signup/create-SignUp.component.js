@@ -1,64 +1,55 @@
-import React, { Component } from 'react';
-// import './SignUpForm.css';
+import React, { useState } from 'react';
 import axios from 'axios';
-export default class SignUpForm extends Component {
-  constructor(props) {
-    super(props);
-    this.onChangeUsername = this.onChangeUsername.bind(this);
-    this.onChangePassword = this.onChangePassword.bind(this);
-    this.onChangeEmail = this.onChangeEmail.bind(this);
-    
-    this.state = {
-      username: '',
-      password: '',
-      email: ''
-    };
-  }
- 
-  onChangeUsername = (e) => {
-    this.setState({ username: e.target.value });
-  }
-  onChangePassword = (e) => {
-    this.setState({ password: e.target.value });
-  }
-  onChangeEmail = (e) => {
-    this.setState({ email: e.target.value });
-  }
-  onSubmit = (e) => {
+
+const SignUp = ({ navigate }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+
+  const onChangeUsername = (e) => {
+    setUsername(e.target.value);
+  };
+
+  const onChangePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const onChangeEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const onSubmit = (e) => {
     e.preventDefault();
     const user = {
-      username: this.state.username,
-      password: this.state.password,
-      email: this.state.email
-    }
+      username,
+      password,
+      email,
+    };
     console.log(user);
-    axios.post('http://localhost:2000/users/add', user)
-    .then(res => console.log(res.data))
-    this.setState ({
-    username: '',
-    password: '',
-    email: ''
-  })
+    axios
+      .post('http://localhost:2000/users/add', user)
+      .then((res) => {
+        console.log(res.data);
+        setUsername('');
+        setPassword('');
+        setEmail('');
+        navigate('/login');
+      });
+  };
 
-  }
-  render() {
-  
-    return (
-      <div className="SignUpForm">
-        <form onSubmit={this.onSubmit}>
-          <label>Username</label>
-          <input type="text" value={this.state.username} onChange={this.onChangeUsername} />
-          <label>Password</label>
-          <input type="password" value={this.state.password} onChange={this.onChangePassword} />
-          <label>Email</label>
-          <input type="email" value={this.state.email} onChange={this.onChangeEmail} />
-          <button>Sign Up</button>
-        </form>
-      </div>
-    );
-  }
-      
-  
-    
-  
-}
+  return (
+    <div className="SignUpForm">
+      <form onSubmit={onSubmit}>
+        <label>Username</label>
+        <input type="text" value={username} onChange={onChangeUsername} />
+        <label>Password</label>
+        <input type="password" value={password} onChange={onChangePassword} />
+        <label>Email</label>
+        <input type="email" value={email} onChange={onChangeEmail} />
+        <button>Sign Up</button>
+      </form>
+    </div>
+  );
+};
+
+export default SignUp;

@@ -7,6 +7,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 // We import all the components we need in our app
 //import Navbar from "./components/navbar";
 import SignUp from "./components/signup/create-SignUp.component";
+import Login from "./components/auth/Login";
 //import Edit from "./components/edit";
 //import Create from "./components/create";
  
@@ -17,6 +18,7 @@ const App = () => {
    <div>
      <Routes>
        <Route path="/signup" element={<SignUp navigate={navigate} />} />
+       <Route path="/login" element={<Login navigate={navigate} />} />
       </Routes>
    </div>
   // </ChakraProvider>

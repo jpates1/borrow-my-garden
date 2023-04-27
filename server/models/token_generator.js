@@ -2,9 +2,9 @@ const JWT = require("jsonwebtoken");
 const secret = process.env.JWT_SECRET;
 
 class TokenGenerator {
-  static jsonwebtoken(id) {
+  static jsonwebtoken(_id) {
     return JWT.sign({
-      id: id,
+      _id: _id,
       iat: Math.floor(Date.now() / 1000),
       
       // Set the JWT token to expire in 10 minutes
