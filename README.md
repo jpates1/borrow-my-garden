@@ -2,8 +2,6 @@
   <br /><br /><strong>BORROW MY GARDEN</strong>
 </h1>
 
-# Borrow My Garden
-
 ## Introduction
 
 Borrow My Garden is a community project which connects those with to those without a garden.
