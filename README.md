@@ -1,5 +1,4 @@
 <h1 align="center" style="display: block; font-size: 2.5em; font-weight: bold; margin-block-start: 1em; margin-block-end: 1em;">
-<a name="logo" href="https://www.aregtech.com"><img align="center" src="https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/areg-sdk-1280x360px-logo.png" alt="AREG SDK Home" style="width:100%;height:100%"/></a>
   <br /><br /><strong>BORROW MY GARDEN</strong>
 </h1>
 
@@ -22,10 +21,10 @@ Users of Borrow My Garden will be able to
 - Browse all listed gardens
 - Connect with garden owners
 
-## Table of contents (#tableofcontents)
+## [Table of contents](#tableofcontents)
 
 - [Motivation](#motivation)
-- [Composition] (#composition)
+- [Composition](#composition)
 - [Software build](#software-build)
   - [Clone sources](#clone-sources)
   - [Build with `cmake`](#build-with-cmake)
