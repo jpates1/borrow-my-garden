@@ -5,21 +5,18 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
  
 // We import all the components we need in our app
-//import Navbar from "./components/navbar";import RecordList from "./components/recordList";
+//import Navbar from "./components/navbar";
+import SignUp from "./components/signup/SignUp";
 //import Edit from "./components/edit";
-import Create from "./components/signup/Create";
-import Login from "./components/login/Login";
+//import Create from "./components/create";
  
 const App = () => {
  return (
    <div>
      {/* <Navbar /> */}
      <Routes>
-       <Route exact path="/login" element={<Login />} />
-       <Route path="/" element={<Create />} />
-       {/* <Route path="/edit/:id" element={<Edit />} /> */}
-       
-     </Routes>
+       <Route path="/signup" element={<SignUp navigate={navigate} />} />
+      </Routes>
    </div>
  );
 };
