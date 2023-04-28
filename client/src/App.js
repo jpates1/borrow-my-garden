@@ -18,6 +18,7 @@ const App = () => {
    <div>
      <Routes>
        {/* <Route path="/signup" element={<SignUp navigate={navigate} />} /> */}
+       <Route path="/" element={<ViewSingleGarden navigate={navigate} />} />
       </Routes>
    </div>
   // </ChakraProvider>

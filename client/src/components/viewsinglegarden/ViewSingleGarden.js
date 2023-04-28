@@ -1,5 +1,5 @@
 import React from "react";
-import { ChakraProvider, Container, Button, Heading, Divider, Input, Select, Card, CardHeader, CardBody, CardFooter } from "@chakra-ui/react";
+import { ChakraProvider, Container, Button, Heading, Divider, Card, CardBody, CardFooter, Text } from "@chakra-ui/react";
 
 const ViewSingleGarden = () => {
   return (
@@ -10,7 +10,7 @@ const ViewSingleGarden = () => {
         <Divider />
         <Card>
           <CardBody>
-          
+          <Text>Lovely big garden in Hackney.</Text>
           <Button colorScheme='teal' variant='outline'>
             Connect
           </Button>
@@ -27,3 +27,4 @@ const ViewSingleGarden = () => {
   );
 }
 
+export default ViewSingleGarden;
