@@ -1,28 +1,39 @@
-import React from "react";
-// import { ChakraProvider } from '@chakra-ui/react';
- 
-// We use Route in order to define the different routes of our application
-import { Route, Routes, useNavigate } from "react-router-dom";
- 
-// We import all the components we need in our app
-//import Navbar from "./components/navbar";
-import SignUp from "./components/signup/create-SignUp.component";
-import Login from "./components/auth/Login";
-//import Edit from "./components/edit";
-//import Create from "./components/create";
- 
-const App = () => {
-  const navigate = useNavigate();
- return (
-  // <ChakraProvider>
-   <div>
-     <Routes>
-       <Route path="/signup" element={<SignUp navigate={navigate} />} />
-       <Route path="/login" element={<Login navigate={navigate} />} />
-      </Routes>
-   </div>
-  // </ChakraProvider>
- );
-};
- 
-export default App;
+import React, { useState } from 'react';
+import axios from 'axios';
+const Login = ({ navigate }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:2000/tokens', { email, password }); //only thing changed here
+      if (response.status !== 201) {
+        console.log("yay");
+        navigate('/login');
+      } else {
+        console.log("oops");
+        window.localStorage.setItem("token", response.data.token);
+        navigate('/posts');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  }
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  }
+  return (
+    <div>
+      <h1>Login Page</h1>
+      <form onSubmit={handleSubmit}>
+        <input placeholder='Email' id="email" type='text' value={ email } onChange={handleEmailChange} />
+        <input placeholder='Password' id="password" type='password' value={ password } onChange={handlePasswordChange} />
+        <button role='submit-button' id='submit' type="submit" value="Submit">Sign In</button>
+      </form>
+    </div>
+  );
+}
+export default Login;
