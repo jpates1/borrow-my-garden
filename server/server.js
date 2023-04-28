@@ -6,7 +6,6 @@ require("dotenv").config();
 const port = process.env.PORT || 2000;
 const JWT = require("jsonwebtoken");
 
-//const gardensRouter = require("./routes/gardens");
 
 
 
@@ -52,14 +51,14 @@ connection.once('open', () => {
     console.log(collections.map(c => c.s.name));
   });
 });
+const gardensRouter = require("./routes/gardens");
 const tokensRouter = require("./routes/tokens");
 const usersRouter = require("./routes/users");
 
-//app.use("/gardens", tokenChecker, gardensRouter);
+app.use("/gardens", tokenChecker, gardensRouter);
 app.use("/tokens", tokensRouter);
 app.use("/users", usersRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
