@@ -9,7 +9,7 @@ const Login = ({ navigate }) => {
     event.preventDefault();
 
     try {
-      const response = await axios.post('/tokens', { email, password });
+      const response = await axios.post('http://localhost:2000/tokens', { email, password }); //only thing changed here
 
       if (response.status !== 201) {
         console.log("yay");
@@ -34,7 +34,7 @@ const Login = ({ navigate }) => {
 
   return (
     <div>
-      <h1>Sign In Form</h1>
+      <h1>Login Page</h1>
       <form onSubmit={handleSubmit}>
         <input placeholder='Email' id="email" type='text' value={ email } onChange={handleEmailChange} />
         <input placeholder='Password' id="password" type='password' value={ password } onChange={handlePasswordChange} />
