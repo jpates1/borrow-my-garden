@@ -11,6 +11,9 @@ const ViewSingleGarden = () => {
         <Card>
           <CardBody>
           <Text>Lovely big garden in Hackney.</Text>
+          <Text pt='2' fontSize='sm'>
+          South facing garden that I sadly don't have time to tend.
+        </Text>
           <Button colorScheme='teal' variant='outline'>
             Connect
           </Button>
