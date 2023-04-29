@@ -99,16 +99,30 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 # Example Usage
 
+insert video / screenshot demo here 
+
 # Sign up 
+
+insert video / screenshot demo here
 
 # Login
 
+insert video / screenshot demo here
+
 # List a Garden
+
+insert video / screenshot demo here
 
 # View All Gardens
 
+insert video / screenshot demo here
+
 # Send a Message
 
+insert video / screenshot demo here
+
+
+<div align="right">[ <a href="#table-of-contents">↑ to top ↑</a> ]</div>
 
 // not sure if all this is needed??? James, please confirm!!
 
