@@ -4,18 +4,9 @@
 
 ## Introduction
 
-Borrow My Garden is an application where users can list their unused gardens and connect with those who are looking for a plot to cultivate. 
-
-
-
+Borrow My Garden is an application where users can list their unused gardens and connect with those who are looking for a plot to cultivate.
 
 community project
-
-The app simultaneously addresses three core issues that we face within UK society:
-
-- Lack of available Allotment plots
-- Uk Mental Health crisis
-- Cost of living crisis
 
 Users of Borrow My Garden will be able to
 
@@ -56,7 +47,11 @@ Borrow My Garden will give users the opportunity to grow their own food and by d
 
 <div align="right">[ <a href="#table-of-contents">↑ to top ↑</a> ]</div>
 
+# Install
+
 # Getting Started with Create React App
+
+`git clone https://github.com/jpates1/borrow-my-garden`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
