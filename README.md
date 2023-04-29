@@ -4,7 +4,12 @@
 
 ## Introduction
 
-Borrow My Garden is a community project which connects those with to those without a garden.
+Borrow My Garden is an application where users can list their unused gardens and connect with those who are looking for a plot to cultivate. 
+
+
+
+
+community project
 
 The app simultaneously addresses three core issues that we face within UK society:
 
@@ -24,29 +29,17 @@ Users of Borrow My Garden will be able to
 - [Motivation](#motivation)
 - [Composition](#composition)
 - [Software build](#software-build)
-  - [Clone sources](#clone-sources)
   - [Build with `cmake`](#build-with-cmake)
-  - [Build with `make`](#build-with-make)
-  - [Build with `msbuild`](#build-with-msbuild)
-  - [Build with IDE](#build-with-ide)
 - [Integration](#integration)
   - [Integrate for development](#integrate-for-development)
   - [Configure multicast router](#configure-multicast-router)
   - [Configure logging](#configure-logging)
-- [Roadmap](#roadmap)
-- [Interface-centricity](#interface-centricity)
-- [More than embedded](#more-than-embedded)
-- [Use cases and benefits](#use-cases-and-benefits)
-  - [Distributed solution](#distributed-solution)
-  - [Driverless devices](#driverless-devices)
-  - [Real-time solutions](#real-time-solutions)
-  - [Digital twin](#digital-twin)
-  - [Simulation and tests](#simulation-and-tests)
+- [Install](#install)
 - [Examples](#examples)
 - [License](#license)
 - [Call to action](#call-to-action)
 
-# Background
+# Motivation
 
 **Lack of Allotment spaces**
 Demand for allotment spaces has risen by over 200% in recent years and wait lists for a plot are often exceeding 15 years.
