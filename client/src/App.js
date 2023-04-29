@@ -6,7 +6,9 @@ import { Route, Routes } from "react-router-dom";
  
 // We import all the components we need in our app
 //import Navbar from "./components/navbar";
-import SignUp from "./components/signup/SignUp";
+import SignUp from "./components/signup/create-SignUp.component";
+import Login from "./components/auth/Login";
+import CreateGarden from "./components/createGarden/CreateGarden";
 //import Edit from "./components/edit";
 //import Create from "./components/create";
  
@@ -16,6 +18,8 @@ const App = () => {
      {/* <Navbar /> */}
      <Routes>
        <Route path="/signup" element={<SignUp navigate={navigate} />} />
+       <Route path="/login" element={<Login navigate={navigate} />} />
+       <Route path="/" element={<CreateGarden navigate={navigate} />} />
       </Routes>
    </div>
  );

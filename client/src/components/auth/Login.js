@@ -17,7 +17,7 @@ const Login = ({ navigate }) => {
       } else {
         console.log("oops");
         window.localStorage.setItem("token", response.data.token);
-        navigate('/posts');
+        navigate('/');
       }
     } catch (error) {
       console.error(error);
