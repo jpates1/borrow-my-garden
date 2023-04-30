@@ -1,29 +1,29 @@
 import React from "react";
-// import { ChakraProvider } from '@chakra-ui/react';
- 
-// We use Route in order to define the different routes of our application
 import { Route, Routes, useNavigate } from "react-router-dom";
- 
-// We import all the components we need in our app
 //import Navbar from "./components/navbar";
-import SignUp from "./components/signup/create-SignUp.component";
+import SignUp from "./components/signup/SignUp";
 import Login from "./components/auth/Login";
+import LandingPage from "./components/landingpage/LandingPage";
 import CreateGarden from "./components/createGarden/CreateGarden";
-//import Edit from "./components/edit";
-//import Create from "./components/create";
+import AllGardens from "./components/allgardens/AllGardens";
+import ViewSingleGarden from "./components/viewsinglegarden/ViewSingleGarden";
  
 const App = () => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
+
  return (
-  // <ChakraProvider>
    <div>
+     {/* <Navbar /> */}
      <Routes>
        <Route path="/signup" element={<SignUp navigate={navigate} />} />
        <Route path="/login" element={<Login navigate={navigate} />} />
-       <Route path="/" element={<CreateGarden navigate={navigate} />} />
+       <Route path="/" element={<LandingPage navigate={navigate} />} />
+       <Route path="/add" element={<CreateGarden navigate={navigate} />} />
+       <Route path="/gardens" element={<AllGardens navigate={navigate} />} />
+       <Route path="/garden" element={<ViewSingleGarden navigate={navigate} />} />
+       {/* <Messages /> */}
       </Routes>
    </div>
-  // </ChakraProvider>
  );
 };
  
