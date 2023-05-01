@@ -1,12 +1,16 @@
-import React from "react";
-import { Box, Text } from "@chakra-ui/react";
+const NavBar = (props) => {
+  const [isOpen, setIsOpen] = React.useState(false)
 
-export default function Logo(props) {
+  const toggle = () => setIsOpen(!isOpen)
+
   return (
-    <Box {...props}>
-      <Text fontSize="lg" fontWeight="bold">
-        Logo
-      </Text>
-    </Box>
+    <NavBarContainer {...props}>
+      <Logo
+        w="100px"
+        color={["white", "white", "primary.500", "primary.500"]}
+      />
+      <MenuToggle toggle={toggle} isOpen={isOpen} />
+      <MenuLinks isOpen={isOpen} />
+    </NavBarContainer>
   )
 }
