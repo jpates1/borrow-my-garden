@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import Garden from '../garden/Garden';
+import Garden from '../garden/SimpleGarden';
 
 import { ChakraProvider, Container, Button, Heading, Divider, Image, Box, Card, CardBody, Text } from "@chakra-ui/react";
 
