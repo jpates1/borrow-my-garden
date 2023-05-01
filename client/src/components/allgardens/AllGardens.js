@@ -1,30 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios';
+import Garden from '../garden/Garden';
+
 import { ChakraProvider, Container, Button, Heading, Divider, Image, Box, Card, CardBody, Text } from "@chakra-ui/react";
 
-const AllGardens = () => {
-  return (
-    <>
-    <ChakraProvider>
-      <Container>
-        <Heading>Borrow My Garden</Heading>
-        <Divider />
-        <Card>
-          <CardBody>
-            <Text>Lovely big garden in Hackney.</Text>
-            <Box boxSize='sm'>
-              <Image src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
-            </Box>                   
-            <Link to={"/garden"}>
-              <Button colorScheme='teal' variant='outline'> 
-              More details
-            </Button>
-          </Link>  
-          </CardBody>
-        </Card>
-      </Container>
-      </ChakraProvider>
-      </>
-  );
+const AllGardens = ({ navigate }) => {
+  const [gardens, setGardens] = useState([]);
+  const [token, setToken] = useState(window.localStorage.getItem("token"));
+
+  useEffect(() => {
+    if (token) {
+      axios.get('http://localhost:2000/gardens', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      .then(async response => {
+        const data = response.data;
+        window.localStorage.setItem('token', data.token);
+        setToken(window.localStorage.getItem('token'));
+        setGardens(data.gardens);
+      })
+      .catch(error => {
+        console.error('Error fetching gardens:', error);
+      });
+    }
+  }, []);
+
+    return (
+      <div id="feed" role="feed">
+      {gardens
+        .map((garden) => (
+          <Garden
+            key={garden._id}
+            garden={{
+              ...garden,
+            }}
+          />
+        ))}
+    </div>
+    );
 }
-export default AllGardens;
+  export default AllGardens;
