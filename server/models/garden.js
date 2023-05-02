@@ -5,7 +5,7 @@ const GardenSchema = new mongoose.Schema({
   description: String,
   size: String,
   postcode: String,
-  type: String,
+  gardenType: String,
 });
 
 const Garden = mongoose.model("Garden", GardenSchema);
