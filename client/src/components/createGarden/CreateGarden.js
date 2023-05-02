@@ -59,7 +59,7 @@ const CreateGarden = ({ navigate }) => {
           setSize('');
           setPostcode('');
           setGardenType('');
-          navigate('/done'); //this can be changed to navigate back to the 'feed' when we add that component
+          navigate('/gardens'); //this can be changed to navigate back to the 'feed' when we add that component
         })
         .catch((error) => {
           console.log(error);

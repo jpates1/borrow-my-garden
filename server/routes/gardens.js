@@ -35,4 +35,22 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+router.get('/:id', async (req, res) => {
+  const id = req.id;
+
+  try {
+    const garden = await Garden.findById(id);
+    if (!garden) {
+      return res.status(404).json({ error: 'Garden not found' });
+    }
+
+    const token = await TokenGenerator.jsonwebtoken(req._id);
+    res.status(200).json({ garden: garden, token: token });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 module.exports = router;
