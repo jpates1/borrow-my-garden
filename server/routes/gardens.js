@@ -36,8 +36,8 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/:id', async (req, res) => {
-  const id = req.id;
+router.get('/:_id', async (req, res) => {
+  const id = req.params._id;
 
   try {
     const garden = await Garden.findById(id);
