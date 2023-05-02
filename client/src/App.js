@@ -7,6 +7,10 @@ import LandingPage from "./components/landingpage/LandingPage";
 import CreateGarden from "./components/createGarden/CreateGarden";
 import AllGardens from "./components/gardenViews/AllGardensView";
 import SingleGardenView from "./components/gardenViews/SingleGardenView";
+import ProfilePage from "./components/profilepage/ProfilePage";
+import ViewMyListing from "./components/viewmylisting/ViewMyListing";
+import EditMyDetails from "./components/editmydetails/EditMyDetails";
+import Messages from "./components/messages/messages";
  
 const App = () => {
     const navigate = useNavigate();
@@ -21,6 +25,10 @@ const App = () => {
        <Route path="/add" element={<CreateGarden navigate={navigate} />} />
        <Route path="/gardens" element={<AllGardens navigate={navigate} />} />
        <Route path="/gardens/:_id" element={<SingleGardenView navigate={navigate} />} />
+       <Route path="/profilepage" element={<ProfilePage navigate={navigate} />} />
+       <Route path="/viewmylisting" element={<ViewMyListing navigate={navigate} />} />
+       <Route path="/editmydetails" element={<EditMyDetails navigate={navigate} />} />
+       <Route path="/messages" element={<Messages navigate={navigate} />} />
        {/* <Messages /> */}
       </Routes>
    </div>
