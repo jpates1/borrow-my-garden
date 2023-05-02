@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 let User = require('../models/user.model');
+let Garden = require('../models/garden');
+const TokenGenerator = require("../models/token_generator");
 
 router.post('/add', (req, res) => {
   const username = req.body.username;
@@ -45,6 +48,36 @@ router.post('/login', (req, res) => {
         }
       });
     }
+// ---
+  
+// router.get('/', async (req, res) => {
+//   try {
+//     const user = await User.find({});
+//     const token = await TokenGenerator.jsonwebtoken(req._id);
+//     res.status(200).json({ user: user, token: token });
+//     console.log('hi there')
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json({ error: 'Internal Server Error' });
+//   }
+// });
+
+
+router.get('/:id', async (req, res) => {
+
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) return res.status(404).send({ error: 'User not found' });
+    res.status(200).send({ user });
+  } catch (error) {
+    res.status(500).send({ error: error.message });
+  }
+
+
+    
+  // ---
+
+  
   });
 });
 

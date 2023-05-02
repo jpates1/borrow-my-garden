@@ -29,6 +29,11 @@ const LandingPage = () => {
             <Button colorScheme='teal' variant='outline'> 
               List a garden
             </Button>
+              </Link>  
+          <Link to={"/user/:id"}>
+            <Button colorScheme='teal' variant='outline'> 
+              view profile
+            </Button>
           </Link>     
         </Container>
         </Flex>
