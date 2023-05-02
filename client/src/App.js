@@ -10,7 +10,7 @@ import SingleGardenView from "./components/gardenViews/SingleGardenView";
 import ProfilePage from "./components/profilepage/ProfilePage";
 import ViewMyListing from "./components/viewmylisting/ViewMyListing";
 import EditMyDetails from "./components/editmydetails/EditMyDetails";
-import Messages from "./components/messages/messages";
+import Messages from "./components/messages/Messages";
  
 const App = () => {
     const navigate = useNavigate();

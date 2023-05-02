@@ -37,6 +37,8 @@ const SignUp = ({ navigate }) => {
       });
   };
 
+    // Permission to style this?
+
   return (
     <div className="SignUpForm">
       <form onSubmit={onSubmit}>

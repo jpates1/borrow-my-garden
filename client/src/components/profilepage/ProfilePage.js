@@ -1,7 +1,7 @@
 import React from "react";
 // import react-router-dom?
 
-import { ChakraProvider, Container, Button, Heading, Divider, CardBody, Card, Text } from "@chakra-ui/react";
+import { ChakraProvider, Container, Button, Heading, Divider, Stack } from "@chakra-ui/react";
 
 const ProfilePage = () => {
 
@@ -9,8 +9,9 @@ return (
   <>
   <ChakraProvider>
     <Container>
-      <Heading>Borrow My Garden</Heading>
+      <Heading align='center'>Borrow My Garden</Heading>
       <Divider />
+      <Stack paddingY='20px'>
       <Button colorScheme='teal' variant='outline'>
         View my listing
         {/* This button points to the single garden page with the current user's user ID 
@@ -22,6 +23,7 @@ return (
       <Button colorScheme='teal' variant='outline'>
         View messages
       </Button>
+      </Stack>
       {/* <Card>
         <CardBody>
           <Text>LAUREN</Text>

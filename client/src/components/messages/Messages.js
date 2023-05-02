@@ -1,5 +1,5 @@
 import React from "react";
-import { ChakraProvider, Container, Button, Heading, StackDivider, Divider, Card, CardBody, CardHeader, CardFooter, Text, Stack, Image } from "@chakra-ui/react";
+import { ChakraProvider, Container, Button, Heading, Divider, Card, CardBody, CardFooter, Text, Stack, } from "@chakra-ui/react";
 
 const Messages = () => {
   return (
@@ -15,7 +15,7 @@ const Messages = () => {
 
           <Stack>
           <CardBody>
-          <Heading size='md'>You are messaging user id here</Heading>
+          <Heading size='md'>You are messaging userName goes here</Heading>
           
           <Button colorScheme='teal' variant='outline'>
             Send

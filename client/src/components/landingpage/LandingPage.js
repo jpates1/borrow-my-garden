@@ -8,7 +8,7 @@ const LandingPage = () => {
     <>
     <ChakraProvider>
       <Container>
-        <Heading>Borrow My Garden</Heading>
+        <Heading align='center'>Borrow My Garden</Heading>
         <Divider />
         <Flex>
         <Container p='4'>   

@@ -1,5 +1,5 @@
 import React from "react";
-import { ChakraProvider, Container, Button, Heading, StackDivider, Divider, Card, CardBody, CardHeader, CardFooter, Text, Stack, Image } from "@chakra-ui/react";
+import { ChakraProvider, Container, Button, Heading, Divider, Card, CardBody, CardFooter, Text, Stack, Image } from "@chakra-ui/react";
 
 const ViewMyListing = () => {
   return (
