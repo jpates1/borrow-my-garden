@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
-//import Navbar from "./components/navbar";
+import NavBar from "./NavBar";
 import SignUp from "./components/signup/SignUp";
 import Login from "./components/auth/Login";
 import LandingPage from "./components/landingpage/LandingPage";
@@ -13,7 +13,7 @@ const App = () => {
 
  return (
    <div>
-     {/* <Navbar /> */}
+     <NavBar />
      <Routes>
        <Route path="/signup" element={<SignUp navigate={navigate} />} />
        <Route path="/login" element={<Login navigate={navigate} />} />

@@ -19,3 +19,5 @@ const NavBarContainer = ({ children, ...props }) => {
     </Flex>
   )
 }
+
+export default NavBarContainer;
