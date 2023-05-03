@@ -6,11 +6,12 @@ const ViewMyListing = () => {
     <>
     <ChakraProvider>
       <Container>
-        <Heading align='center'>Borrow My Garden</Heading>
-        <Divider />
+        <Heading color='teal' paddingBottom='100px' align='center'>Borrow My Garden</Heading>
+        
         <Card
             direction={{ base: 'column', sm: 'row' }}
             overflow='hidden'
+            variant='unstyled'
         >
 
           <Stack>
@@ -36,7 +37,8 @@ const ViewMyListing = () => {
     borderRadius='lg'
   />
           </Card>
-          <Card align='center'>
+          <Card align='center'
+          variant='unstyled'>
             <CardBody>
             <CardFooter>
             {/* <Link to={"/profilepage"}> */}

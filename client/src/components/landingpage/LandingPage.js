@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ChakraProvider, Container, Button, Heading, Divider, Image, Box, Flex } from "@chakra-ui/react";
+import { ChakraProvider, Container, Button, Heading, Image, Box, Stack, Center } from "@chakra-ui/react";
 
 const LandingPage = () => {
 
@@ -8,33 +8,39 @@ const LandingPage = () => {
     <>
     <ChakraProvider>
       <Container>
-        <Heading align='center'>Borrow My Garden</Heading>
-        <Divider />
-        <Flex>
-        <Container p='4'>   
+        <Heading color='teal' paddingBottom='100px' align='center'>Borrow My Garden</Heading>
+        
+        <Stack>
+        <Container align='center' p='4'>   
           <Box boxSize='sm'>
-            <Image src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
-          </Box>
+          <Image src='https://images.cdn3.stockunlimited.net/preview1300/man-looking-away-while-gardening-at-plant-nursery_1930169.jpg' alt='Find a garden' />
           <Link to={"/gardens"}>
-            <Button colorScheme='teal' variant='outline'> 
-              Find a garden
-            </Button>
-          </Link>  
+          <Center>
+          <Button marginTop='10px' colorScheme='teal' variant='outline'> 
+            Find a garden
+          </Button>
+          </Center>
+          </Link>
+          </Box>
         </Container>
-        <Container p='4'>
+
+        <Container align='center' p='4'>
           <Box boxSize='sm'>
             <Image src='https://www.rhs.org.uk/getmedia/80a72c91-1f32-42cc-9fd9-d434f4f0623f/Cottage-garden-hero.jpg?width=800&height=533' alt='Garden' />
-          </Box>
-          <Link to={"/add"}>
-            <Button colorScheme='teal' variant='outline'> 
-              List a garden
+            <Link to={"/add"}>
+            <Center>
+            <Button marginTop='10px' colorScheme='teal' variant='outline'> 
+              List your garden
             </Button>
-          </Link>     
+            </Center>
+          </Link> 
+          </Box>
         </Container>
-        </Flex>
+        </Stack>
+      
       </Container>  
-      </ChakraProvider>
-      </>
+    </ChakraProvider>
+    </>
   );
 }
 

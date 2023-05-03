@@ -10,8 +10,8 @@ import { ChakraProvider,
   FormLabel,
   Stack, 
   Card, 
-  CardBody, 
-  Text, 
+  CardBody,
+  Text,
   Image } from "@chakra-ui/react";
 
 const ProfilePage = () => {
@@ -20,12 +20,13 @@ return (
   <>
   <ChakraProvider>
     <Container>
-      <Heading align='center'>Borrow My Garden</Heading>
+      <Heading color='teal' paddingBottom='100px' align='center'>Borrow My Garden</Heading>
+      <Heading color='teal' paddingBottom='50px' align='center' size='md'>My Profile</Heading>
       <Button colorScheme='teal' variant='outline'>
         View messages
       </Button>
       <Stack paddingY='20px'>
-      <Heading size='md'>My Garden</Heading>
+      <Heading paddingTop='50px' size='md'>My Garden</Heading>
       <Card
             direction={{ base: 'column', sm: 'row' }}
             overflow='hidden'
@@ -34,11 +35,11 @@ return (
 
           <Stack>
           <CardBody>
-          <Text pt='2' fontSize='sm'>
+          <Text paddingBottom='20px' pt='2' fontSize='sm'>
           Unused raised beds.
           </Text>
           <Button colorScheme='teal' variant='outline'>
-        More details - this goes to view my listing page
+        More details
       </Button>
       </CardBody>
       </Stack>
@@ -51,17 +52,17 @@ return (
  
       
       </Card>
-      <Heading size='md'>Update your details</Heading>
+      <Heading paddingTop='50px' size='md'>Update your details</Heading>
       <Card variant='unstyled'>
           <CardBody>
           
           <FormControl paddingY='20px'>
             <FormLabel>New username</FormLabel>
-            <Input type='text' />
+            <Input placeholder='New username' type='text' />
             <FormLabel>New email address</FormLabel>
-            <Input type='email' />
+            <Input placeholder='New email address' type='email' />
             <FormLabel>New password</FormLabel>
-            <Input type='password' />
+            <Input placeholder='New password' type='password' />
           </FormControl>
           <Button colorScheme='teal' variant='outline'>
             Save

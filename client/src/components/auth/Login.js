@@ -32,7 +32,6 @@ const Login = ({ navigate }) => {
     setPassword(event.target.value);
   }
 
-  // Permission to style?
   return (
     <div>
       <h1>Login Page</h1>
