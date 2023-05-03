@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Login = ({ navigate }) => {
+const Login = ({navigate}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
