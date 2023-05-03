@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { ChakraProvider, 
+  Container, 
+  Button, 
+  Heading, 
+  FormControl,
+  Input,
+  FormLabel,
+  Stack, 
+  Card, 
+  CardBody,
+  Text,
+  Image } from "@chakra-ui/react";
 
 const SignUp = ({ navigate }) => {
   const [username, setUsername] = useState('');
@@ -37,20 +49,27 @@ const SignUp = ({ navigate }) => {
       });
   };
 
-    // Permission to style this?
-
   return (
-    <div className="SignUpForm">
-      <form onSubmit={onSubmit}>
-        <label>Username</label>
-        <input type="text" value={username} onChange={onChangeUsername} />
-        <label>Password</label>
-        <input type="password" value={password} onChange={onChangePassword} />
-        <label>Email</label>
-        <input type="email" value={email} onChange={onChangeEmail} />
-        <button>Sign Up</button>
-      </form>
-    </div>
+    <>
+      <ChakraProvider>
+        <Container>
+          <Heading color='teal' paddingBottom='100px' align='center'>Borrow My Garden</Heading>
+          <Heading color='teal' paddingBottom='50px' align='center' size='md'>Sign up to Borrow My Garden!</Heading>
+        
+    
+        <FormControl onSubmit={onSubmit}>
+          <FormLabel>Username</FormLabel>
+          <Input placeholder='Username' type="text" value={username} onChange={onChangeUsername} />
+          <FormLabel>Email</FormLabel>
+          <Input placeholder='Email' type="email" value={email} onChange={onChangeEmail} />
+          <FormLabel>Password</FormLabel>
+          <Input placeholder='Password' type="password" value={password} onChange={onChangePassword} />
+          <Button marginTop='10px' colorScheme="teal" variant="outline" onClick={onSubmit}>Sign Up</Button>
+        </FormControl>
+        </Container>
+        </ChakraProvider>
+      </>
+
   );
 };
 
