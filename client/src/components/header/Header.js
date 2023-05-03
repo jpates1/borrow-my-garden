@@ -33,10 +33,6 @@ const Header = (props) => {
         <img src={Logo} alt='Logo' width={150} height={250} />
       </Box>
 
-      <Box display={{ base: 'block', md: 'none' }} onClick={toggleMenu}>
-        {show ? <CloseIcon /> : <HamburgerIcon />}
-      </Box>
-
       <Box
         display={{ base: show ? 'block' : 'none', md: 'block' }}
         flexBasis={{ base: '100%', md: 'auto' }} 
@@ -64,7 +60,7 @@ const Header = (props) => {
             <Box bg="" p="10px">
               <Link to={"/login"} isLast>Logout</Link>
             </Box>
-            
+
           </HStack>
           
         </Flex>
