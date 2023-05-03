@@ -8,7 +8,7 @@ router.post('/add', (req, res) => {
   const size = req.body.size;
   const postcode = req.body.postcode;
   const gardenType = req.body.gardenType;
-
+  const user = req.user.id;
 
   const newGarden = new Garden({
     title,
@@ -16,6 +16,7 @@ router.post('/add', (req, res) => {
     size,
     postcode,
     gardenType,
+    owner: req.user.id
   });
 
   newGarden.save()
@@ -23,9 +24,15 @@ router.post('/add', (req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+
 router.get('/', async (req, res) => {
   try {
-    const gardens = await Garden.find({});
+    let gardens = null;
+    if (req.user) { // if user is logged in
+      gardens = await Garden.find({ owner: req.user._id });
+    } else { // if user is not logged in
+      gardens = await Garden.find({});
+    }
     const token = await TokenGenerator.jsonwebtoken(req._id);
     res.status(200).json({ gardens: gardens, token: token });
   } catch (err) {
@@ -33,6 +40,11 @@ router.get('/', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
+
+
+  
+ 
 
 
 router.get('/:_id', async (req, res) => {
