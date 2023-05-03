@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { ChakraProvider, 
+  Container, 
+  Button, 
+  Heading, 
+  FormControl,
+  Input,
+  FormLabel,
+  Stack, 
+  Card, 
+  CardBody,
+  Text,
+  Image } from "@chakra-ui/react";
 
 const Login = ({ navigate }) => {
   const [email, setEmail] = useState("");
@@ -33,14 +45,23 @@ const Login = ({ navigate }) => {
   }
 
   return (
-    <div>
-      <h1>Login Page</h1>
-      <form onSubmit={handleSubmit}>
-        <input placeholder='Email' id="email" type='text' value={ email } onChange={handleEmailChange} />
-        <input placeholder='Password' id="password" type='password' value={ password } onChange={handlePasswordChange} />
-        <button role='submit-button' id='submit' type="submit" value="Submit">Sign In</button>
-      </form>
-    </div>
+    <>
+      <ChakraProvider>
+        <Container>
+                    <Heading color='teal' paddingBottom='100px' align='center'>Borrow My Garden</Heading>
+          <Heading color='teal' paddingBottom='50px' align='center' size='md'>Login Page</Heading>
+  
+      <FormControl onSubmit={handleSubmit}>
+        <FormLabel color='teal'>Email</FormLabel>
+        <Input placeholder='Email' id="email" type='text' value={ email } onChange={handleEmailChange} />
+        <FormLabel color='teal'>Password</FormLabel>
+        <Input placeholder='Password' id="password" type='password' value={ password } onChange={handlePasswordChange} />
+        <Button marginTop='10px' colorScheme="teal" variant="outline" role='submit-button' id='submit' type="submit" value="Submit">Sign In</Button>
+      </FormControl>
+
+    </Container>
+    </ChakraProvider>
+    </>
   );
 }
 

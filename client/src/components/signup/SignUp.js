@@ -58,11 +58,11 @@ const SignUp = ({ navigate }) => {
         
     
         <FormControl onSubmit={onSubmit}>
-          <FormLabel>Username</FormLabel>
+          <FormLabel color='teal'>Username</FormLabel>
           <Input placeholder='Username' type="text" value={username} onChange={onChangeUsername} />
-          <FormLabel>Email</FormLabel>
+          <FormLabel color='teal'>Email</FormLabel>
           <Input placeholder='Email' type="email" value={email} onChange={onChangeEmail} />
-          <FormLabel>Password</FormLabel>
+          <FormLabel color='teal'>Password</FormLabel>
           <Input placeholder='Password' type="password" value={password} onChange={onChangePassword} />
           <Button marginTop='10px' colorScheme="teal" variant="outline" onClick={onSubmit}>Sign Up</Button>
         </FormControl>
