@@ -7,16 +7,18 @@ const Messages = () => {
     <ChakraProvider>
       <Container>
         <Heading color='teal' paddingBottom='100px' align='center'>Borrow My Garden</Heading>
+        <Heading color='teal' paddingBottom='50px' align='center' size='md'>Messages</Heading>
         <Card
             direction={{ base: 'column', sm: 'row' }}
             overflow='hidden'
-            variant='unstyled'
+            marginBottom='50px'
+            
         >
 
           <Stack>
           <CardBody>
-          <Heading paddingBottom='50px' size='md'>You are messaging userName</Heading>
-          
+          <Heading paddingBottom='30px' size='md'>You are messaging userName</Heading>
+          <Text paddingBottom='20px '>Some hard coded text here as a placeholder. Hi Hello!</Text>
           <Button colorScheme='teal' variant='outline'>
             Send
           </Button>
