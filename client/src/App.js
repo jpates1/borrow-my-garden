@@ -1,23 +1,29 @@
 import React from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
-//import Navbar from "./components/navbar";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+//import NavBar from "./Navbar";
 import SignUp from "./components/signup/SignUp";
 import Login from "./components/auth/Login";
 import LandingPage from "./components/landingpage/LandingPage";
 import CreateGarden from "./components/createGarden/CreateGarden";
+import IsNavBarNeeded from "./components/isnavbarneeded/IsNavBarNeeded";
+import NavBar from "./components/navbar/NavBar";
 import AllGardens from "./components/gardenViews/AllGardensView";
 import SingleGardenView from "./components/gardenViews/SingleGardenView";
 import ProfilePage from "./components/profilepage/ProfilePage";
 import ViewMyListing from "./components/viewmylisting/ViewMyListing";
 import EditMyDetails from "./components/editmydetails/EditMyDetails";
 import Messages from "./components/messages/Messages";
+
  
 const App = () => {
     const navigate = useNavigate();
 
  return (
    <div>
-     {/* <Navbar /> */}
+    
+    <IsNavBarNeeded>
+      <NavBar />
+    </IsNavBarNeeded> 
      <Routes>
        <Route path="/signup" element={<SignUp navigate={navigate} />} />
        <Route path="/login" element={<Login navigate={navigate} />} />
