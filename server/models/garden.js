@@ -6,6 +6,7 @@ const GardenSchema = new mongoose.Schema({
   size: String,
   postcode: String,
   gardenType: String,
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "User",}
 });
 
 const Garden = mongoose.model("Garden", GardenSchema);
