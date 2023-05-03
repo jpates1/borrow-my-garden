@@ -9,7 +9,6 @@ import AllGardens from "./components/gardenViews/AllGardensView";
 import SingleGardenView from "./components/gardenViews/SingleGardenView";
 import ProfilePage from "./components/profilepage/ProfilePage";
 import ViewMyListing from "./components/viewmylisting/ViewMyListing";
-import EditMyDetails from "./components/editmydetails/EditMyDetails";
 import Messages from "./components/messages/Messages";
  
 const App = () => {
@@ -27,7 +26,6 @@ const App = () => {
        <Route path="/gardens/:_id" element={<SingleGardenView navigate={navigate} />} />
        <Route path="/profilepage" element={<ProfilePage navigate={navigate} />} />
        <Route path="/viewmylisting" element={<ViewMyListing navigate={navigate} />} />
-       <Route path="/editmydetails" element={<EditMyDetails navigate={navigate} />} />
        <Route path="/messages" element={<Messages navigate={navigate} />} />
        {/* <Messages /> */}
       </Routes>
