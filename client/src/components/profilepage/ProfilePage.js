@@ -1,10 +1,29 @@
-import React from "react";
-// import react-router-dom?
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import Garden from "../garden/Garden";
+
 
 import { ChakraProvider, Container, Button, Heading, Divider, Stack } from "@chakra-ui/react";
+  const ProfilePage = ( ) => {
+    const [gardens, setGardens] = useState([]);
+  
+    useEffect(() => {
+      const getGardens = async () => {
+        const userId = localStorage.getItem("user_id"); // assuming the user's _id is stored in localStorage
+        const res = await axios.get(`http://localhost:2000/gardens?owner=${userId}`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        
+          setGardens(res.data.gardens);
+        };
+        getGardens();
+      },[]);
+         
 
-const ProfilePage = () => {
-
+  
 return (
   <>
   <ChakraProvider>
@@ -24,27 +43,20 @@ return (
         View messages
       </Button>
       </Stack>
-      {/* <Card>
-        <CardBody>
-          <Text>LAUREN</Text>
-          <text pt='2' fontSize='sm'>Hi there, thanks for getting in touch...</text>
-        </CardBody>
-        </Card>
-        <Card>
-        <CardBody>
-          <Text>JIM</Text>
-          <text pt='2' fontSize='sm'>I'm afraid we're having renovation work...</text>
-        </CardBody>
-      </Card>
-      <Card>
-        <CardBody>
-          <Text>SONYA</Text>
-          <text pt='2' fontSize='sm'>Hi Sonya, is your garden still available?...</text>
-        </CardBody>
-      </Card> */}
+      <div>
+      <ul>
+      {gardens.map((garden) => (
+        <li key={garden._id}>
+          <h2>{garden.title} </h2>
+        </li>
+      ))}
+      </ul>
+      </div>
+    
     </Container>
   </ChakraProvider>
   </>
 );
 }
+
 export default ProfilePage;
