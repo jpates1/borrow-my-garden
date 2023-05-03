@@ -73,7 +73,7 @@ const CreateGarden = ({ navigate }) => {
     <>
       <ChakraProvider>
         <Container>
-          <Heading>Borrow My Garden</Heading>
+          <Heading align='center'>Borrow My Garden</Heading>
           <Divider />
           <form onSubmit={onSubmit}>
             <Input placeholder='Title' id="title" type='text' value={ title } onChange={onChangeTitle} /> 
