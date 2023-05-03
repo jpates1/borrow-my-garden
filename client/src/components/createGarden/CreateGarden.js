@@ -59,7 +59,7 @@ const CreateGarden = ({ navigate }) => {
           setSize('');
           setPostcode('');
           setGardenType('');
-          navigate('/done'); //this can be changed to navigate back to the 'feed' when we add that component
+          navigate('/gardens'); //this can be changed to navigate back to the 'feed' when we add that component
         })
         .catch((error) => {
           console.log(error);
@@ -73,7 +73,7 @@ const CreateGarden = ({ navigate }) => {
     <>
       <ChakraProvider>
         <Container>
-          <Heading>Borrow My Garden</Heading>
+          <Heading align='center'>Borrow My Garden</Heading>
           <Divider />
           <form onSubmit={onSubmit}>
             <Input placeholder='Title' id="title" type='text' value={ title } onChange={onChangeTitle} /> 

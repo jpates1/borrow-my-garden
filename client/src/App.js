@@ -5,11 +5,14 @@ import SignUp from "./components/signup/SignUp";
 import Login from "./components/auth/Login";
 import LandingPage from "./components/landingpage/LandingPage";
 import CreateGarden from "./components/createGarden/CreateGarden";
-import AllGardens from "./components/allgardens/AllGardens";
-import ViewSingleGarden from "./components/viewsinglegarden/ViewSingleGarden";
 import IsNavBarNeeded from "./components/isnavbarneeded/IsNavBarNeeded";
 import NavBar from "./components/navbar/NavBar";
-
+import AllGardens from "./components/gardenViews/AllGardensView";
+import SingleGardenView from "./components/gardenViews/SingleGardenView";
+import ProfilePage from "./components/profilepage/ProfilePage";
+import ViewMyListing from "./components/viewmylisting/ViewMyListing";
+import EditMyDetails from "./components/editmydetails/EditMyDetails";
+import Messages from "./components/messages/Messages";
 
  
 const App = () => {
@@ -27,7 +30,11 @@ const App = () => {
        <Route path="/" element={<LandingPage navigate={navigate} />} />
        <Route path="/add" element={<CreateGarden navigate={navigate} />} />
        <Route path="/gardens" element={<AllGardens navigate={navigate} />} />
-       <Route path="/garden" element={<ViewSingleGarden navigate={navigate} />} />
+       <Route path="/gardens/:_id" element={<SingleGardenView navigate={navigate} />} />
+       <Route path="/profilepage" element={<ProfilePage navigate={navigate} />} />
+       <Route path="/viewmylisting" element={<ViewMyListing navigate={navigate} />} />
+       <Route path="/editmydetails" element={<EditMyDetails navigate={navigate} />} />
+       <Route path="/messages" element={<Messages navigate={navigate} />} />
        {/* <Messages /> */}
       </Routes>
    </div>
