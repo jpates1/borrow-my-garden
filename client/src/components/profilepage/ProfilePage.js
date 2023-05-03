@@ -1,7 +1,16 @@
 import React from "react";
-// import react-router-dom?
-
-import { ChakraProvider, Container, Button, Heading, Divider, Stack } from "@chakra-ui/react";
+import { ChakraProvider, 
+  Container, 
+  Button, 
+  Heading, 
+  FormControl,
+  Input,
+  FormLabel,
+  Stack, 
+  Card, 
+  CardBody,
+  Text,
+  Image } from "@chakra-ui/react";
 
 const ProfilePage = () => {
 
@@ -9,39 +18,57 @@ return (
   <>
   <ChakraProvider>
     <Container>
-      <Heading align='center'>Borrow My Garden</Heading>
-      <Divider />
-      <Stack paddingY='20px'>
-      <Button colorScheme='teal' variant='outline'>
-        View my listing
-        {/* This button points to the single garden page with the current user's user ID 
-        I've kept the view my listing page anyway for the time being since it has the styling.*/}
-      </Button>
-      <Button colorScheme='teal' variant='outline'>
-        Edit my details
-      </Button>
+      <Heading color='teal' paddingBottom='100px' align='center'>Borrow My Garden</Heading>
+      <Heading color='teal' paddingBottom='50px' align='center' size='md'>My Profile</Heading>
       <Button colorScheme='teal' variant='outline'>
         View messages
       </Button>
+      <Stack paddingY='20px'>
+      <Heading paddingTop='50px' size='md'>My Garden</Heading>
+      <Card
+            direction={{ base: 'column', sm: 'row' }}
+            overflow='hidden'
+            variant='unstyled'
+        >
+
+          <Stack>
+          <CardBody>
+          <Text paddingBottom='20px' pt='2' fontSize='sm'>
+          Unused raised beds.
+          </Text>
+          <Button colorScheme='teal' variant='outline'>
+        More details
+      </Button>
+      </CardBody>
       </Stack>
-      {/* <Card>
-        <CardBody>
-          <Text>LAUREN</Text>
-          <text pt='2' fontSize='sm'>Hi there, thanks for getting in touch...</text>
-        </CardBody>
-        </Card>
-        <Card>
-        <CardBody>
-          <Text>JIM</Text>
-          <text pt='2' fontSize='sm'>I'm afraid we're having renovation work...</text>
-        </CardBody>
+          <Image
+    objectFit='cover'
+    maxW={{ base: '100%', sm: '200px' }}
+    src='https://asenhoradomonte.com/wp-content/uploads/2014/06/new_raised_beds.jpg'
+    borderRadius='lg'
+  />
+ 
+      
       </Card>
-      <Card>
-        <CardBody>
-          <Text>SONYA</Text>
-          <text pt='2' fontSize='sm'>Hi Sonya, is your garden still available?...</text>
-        </CardBody>
-      </Card> */}
+      <Heading paddingTop='50px' size='md'>Update your details</Heading>
+      <Card variant='unstyled'>
+          <CardBody>
+          
+          <FormControl paddingY='20px'>
+            <FormLabel>New username</FormLabel>
+            <Input placeholder='New username' type='text' />
+            <FormLabel>New email address</FormLabel>
+            <Input placeholder='New email address' type='email' />
+            <FormLabel>New password</FormLabel>
+            <Input placeholder='New password' type='password' />
+          </FormControl>
+          <Button colorScheme='teal' variant='outline'>
+            Save
+          </Button>
+          </CardBody>
+        </Card>
+
+      </Stack>
     </Container>
   </ChakraProvider>
   </>

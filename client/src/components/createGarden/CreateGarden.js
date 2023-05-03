@@ -73,20 +73,21 @@ const CreateGarden = ({ navigate }) => {
     <>
       <ChakraProvider>
         <Container>
-          <Heading align='center'>Borrow My Garden</Heading>
+          <Heading  color='teal' paddingBottom='100px' align='center'>Borrow My Garden</Heading>
+          <Heading color='teal' paddingBottom='50px' align='center' size='md'>List Your Garden</Heading>
           <Divider />
           <form onSubmit={onSubmit}>
-            <Input placeholder='Title' id="title" type='text' value={ title } onChange={onChangeTitle} /> 
-            <Input placeholder='Description' id="description" type='text' value={ description } onChange={onChangeDescription} /> 
-            <Input placeholder='Size' id="size" type='text' value={ size } onChange={onChangeSize} /> 
-            <Input placeholder='Postcode' id="postcode" type='text' value={ postcode } onChange={onChangePostcode} /> 
+            <Input marginBottom='10px' placeholder='Title' id="title" type='text' value={ title } onChange={onChangeTitle} /> 
+            <Input marginBottom='10px' placeholder='Description' id="description" type='text' value={ description } onChange={onChangeDescription} /> 
+            <Input marginBottom='10px' placeholder='Size' id="size" type='text' value={ size } onChange={onChangeSize} /> 
+            <Input marginBottom='10px' placeholder='Postcode' id="postcode" type='text' value={ postcode } onChange={onChangePostcode} /> 
             <Select placeholder='Type of Garden' type='text' value={ gardenType } onChange={onChangeGardenType}> 
             {/* this isnt working yet */}
-              <option type='text'>flower</option>
-              <option type='text'>vegetable</option>
-              <option type='text'>no James, not herbs!</option>
+              <option type='text'>Flower</option>
+              <option type='text'>Vegetable</option>
+              <option type='text'>No James, not herbs!</option>
             </Select>
-            <Button onClick={onSubmit}>Submit</Button>
+            <Button marginTop='10px' colorScheme="teal" variant="outline" onClick={onSubmit}>Submit</Button>
           </form>  
         </Container>
       </ChakraProvider>

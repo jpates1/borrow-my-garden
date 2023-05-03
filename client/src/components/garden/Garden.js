@@ -17,7 +17,7 @@ const Garden = ({ garden, detailed }) => {
     <ChakraProvider>
       <Container className="garden-box" data-cy="garden" key={garden._id}>
         <Divider />
-        <Card>
+        <Card variant='unstyled'>
           <CardBody>
             <Text className="title">{garden.title}.</Text>
             <Text pt="2" fontSize="sm">

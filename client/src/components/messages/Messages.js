@@ -6,17 +6,19 @@ const Messages = () => {
     <>
     <ChakraProvider>
       <Container>
-        <Heading align='center'>Borrow My Garden</Heading>
-        <Divider />
+        <Heading color='teal' paddingBottom='100px' align='center'>Borrow My Garden</Heading>
+        <Heading color='teal' paddingBottom='50px' align='center' size='md'>Messages</Heading>
         <Card
             direction={{ base: 'column', sm: 'row' }}
             overflow='hidden'
+            marginBottom='50px'
+            
         >
 
           <Stack>
           <CardBody>
-          <Heading size='md'>You are messaging userName goes here</Heading>
-          
+          <Heading paddingBottom='30px' size='md'>You are messaging userName</Heading>
+          <Text paddingBottom='20px '>Some hard coded text here as a placeholder. Hi Hello!</Text>
           <Button colorScheme='teal' variant='outline'>
             Send
           </Button>
@@ -24,7 +26,8 @@ const Messages = () => {
           </Stack>
           
           </Card>
-          <Card align='center'>
+          <Card align='center'
+          variant='unstyled'>
             <CardBody>
             <CardFooter>
             {/* <Link to={"/profilepage"}> */}
