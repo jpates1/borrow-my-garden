@@ -1,6 +1,6 @@
 import React from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
-import NavBar from "./Navbar";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+//import NavBar from "./Navbar";
 import SignUp from "./components/signup/SignUp";
 import Login from "./components/auth/Login";
 import LandingPage from "./components/landingpage/LandingPage";
@@ -8,6 +8,8 @@ import CreateGarden from "./components/createGarden/CreateGarden";
 import AllGardens from "./components/allgardens/AllGardens";
 import ViewSingleGarden from "./components/viewsinglegarden/ViewSingleGarden";
 import IsNavBarNeeded from "./components/isnavbarneeded/IsNavBarNeeded";
+import Header from "./components/header/Header";
+
 
  
 const App = () => {
@@ -15,8 +17,9 @@ const App = () => {
 
  return (
    <div>
+    
     <IsNavBarNeeded>
-      <NavBar />
+      <Header />
     </IsNavBarNeeded> 
      <Routes>
        <Route path="/signup" element={<SignUp navigate={navigate} />} />
