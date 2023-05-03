@@ -30,9 +30,16 @@ const LandingPage = () => {
               List a garden
             </Button>
           </Link>     
-        </Container>
+        </Container>  
         </Flex>
+        <Divider />
+        <Link to={"/profilepage"}>
+            <Button colorScheme='teal' variant='outline'> 
+               View account
+            </Button>
+          </Link>   
       </Container>  
+  
       </ChakraProvider>
       </>
   );
