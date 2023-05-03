@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Flex, Box, Text, HStack } from '@chakra-ui/react';
-import { CloseIcon, HamburgerIcon} from '@chakra-ui/icons';
 import { Link } from "react-router-dom";
 import Logo from "../../images/logo.png";
 
@@ -30,7 +29,9 @@ const Header = (props) => {
       w="100%"
     >
       <Box w="200px">
+        <Link to={"/"}>
         <img src={Logo} alt='Logo' width={150} height={250} />
+        </Link>
       </Box>
 
       <Box

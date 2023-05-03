@@ -8,7 +8,7 @@ import CreateGarden from "./components/createGarden/CreateGarden";
 import AllGardens from "./components/allgardens/AllGardens";
 import ViewSingleGarden from "./components/viewsinglegarden/ViewSingleGarden";
 import IsNavBarNeeded from "./components/isnavbarneeded/IsNavBarNeeded";
-import Header from "./components/header/Header";
+import NavBar from "./components/navbar/NavBar";
 
 
  
@@ -19,7 +19,7 @@ const App = () => {
    <div>
     
     <IsNavBarNeeded>
-      <Header />
+      <NavBar />
     </IsNavBarNeeded> 
      <Routes>
        <Route path="/signup" element={<SignUp navigate={navigate} />} />
