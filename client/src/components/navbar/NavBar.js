@@ -56,7 +56,7 @@ const Header = (props) => {
               <Link to={"/add"}>List a Garden</Link>
             </Box>
             <Box bg="" p="10px">
-              <Link to={"/user"}>My Profile</Link>
+              <Link to={"/profilepage"}>My Profile</Link>
             </Box>
             <Box bg="" p="10px">
               <Link to={"/login"} isLast>Logout</Link>
