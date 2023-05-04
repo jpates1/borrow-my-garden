@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ChakraProvider, Container, Button, Heading, Image, Box, Stack, Center } from "@chakra-ui/react";
+import { ChakraProvider, Container, Button, Heading, Image, Box, Stack, Center, Divider, HStack } from "@chakra-ui/react";
 
 const LandingPage = () => {
 
@@ -8,10 +8,9 @@ const LandingPage = () => {
     <>
     <ChakraProvider>
       <Container>
-        
-        <Heading color='teal' paddingBottom='50px' align='center' size='md'>Welcome!</Heading>
-        
-        <Stack>
+        <Heading color='teal' paddingBottom='50px' align='center' size='md'>Welcome! </Heading>
+        <Center>
+        <HStack>
         <Container align='center' p='4'>   
           <Box boxSize='sm'>
           <Image src='https://images.cdn3.stockunlimited.net/preview1300/man-looking-away-while-gardening-at-plant-nursery_1930169.jpg' alt='Find a garden' />
@@ -37,7 +36,8 @@ const LandingPage = () => {
           </Link> 
           </Box>
         </Container>
-        </Stack>
+        </HStack>
+        </Center>
       
       </Container>  
     </ChakraProvider>
