@@ -13,6 +13,7 @@ import {
   Image, Card, Divider, Center
 } from '@chakra-ui/react';
 import Logo from "./logo-login.png";
+import NavBarFalse from '../navbarfalse/NavBarFalse';
 
 const Login = ({ navigate }) => {
   const [email, setEmail] = useState("");
@@ -80,7 +81,7 @@ const Login = ({ navigate }) => {
             </Link>
           </Stack>
         </Card>
-      </Flex>
+        </Flex>
     </ChakraProvider>        
   );
 }
