@@ -2,6 +2,19 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Garden from "../garden/Garden";
+import {
+  ChakraProvider,
+  Container,
+  Link,
+  Button,
+  Divider,
+  Heading,
+  Card,
+  CardBody,
+  UnorderedList,
+  ListItem,
+  Text,
+} from "@chakra-ui/react";
 
 const SingleGardenView = () => {
   const { _id } = useParams();
@@ -30,7 +43,17 @@ const SingleGardenView = () => {
 
   return (
     <>
+    <ChakraProvider>
+      <Container>
+        
+      
+        <Heading color='teal' paddingBottom='50px' align='center' size='md'>Garden Details</Heading>
+        
       {garden && <Garden garden={garden} detailed={true} />}
+
+      
+      </Container>
+    </ChakraProvider>
     </>
   );
 };
