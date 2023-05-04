@@ -4,9 +4,10 @@ import {
   Container,
   Link,
   Button,
-  Divider,
   Card,
   CardBody,
+  UnorderedList,
+  ListItem,
   Text,
 } from "@chakra-ui/react";
 import { Link as ReactRouterLink } from 'react-router-dom';
@@ -18,21 +19,21 @@ const Garden = ({ garden, detailed }) => {
       <Container className="garden-box" data-cy="garden" key={garden._id}>
         <Card marginY='30px' variant='elevated'>
           <CardBody>
-            <Text marginBottom='3px' className="title">{garden.title}.</Text>
+            <Text fontWeight='medium' marginBottom='3px' className="title">{garden.title}.</Text>
             <Text marginBottom='10px' pt="2" fontSize="sm">
               {garden.description}
             </Text>
             {detailed && (
               <>
-                <Text pt="2" fontSize="sm">
-                  {garden.size}
-                </Text>
-                <Text pt="2" fontSize="sm">
-                  {garden.postcode}
-                </Text>
-                <Text pt="2" fontSize="sm">
-                  {garden.gardenType}
-                </Text>
+                <UnorderedList marginBottom='15px'>
+                <ListItem><Text pt="2" fontSize="sm">Garden size: {garden.size}
+                </Text></ListItem>
+                <ListItem><Text pt="2" fontSize="sm">Garden postcode: {garden.postcode}
+                </Text></ListItem>
+                <ListItem><Text pt="2" fontSize="sm">Garden Type: {garden.gardenType}
+                </Text></ListItem>
+                </UnorderedList>
+                <Button margin='15px' colorScheme="teal" variant="outline">Connect</Button>
               </>
             )}
           </CardBody>
