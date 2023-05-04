@@ -10,7 +10,8 @@ import { ChakraProvider, Container, Button, Heading, Divider, Stack } from "@cha
   
     useEffect(() => {
       const getGardens = async () => {
-        const userId = localStorage.getItem("user_id"); // assuming the user's _id is stored in localStorage
+      const userId = localStorage.getItem("userId");
+      console.log(userId);
         const res = await axios.get(`http://localhost:2000/gardens?owner=${userId}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
