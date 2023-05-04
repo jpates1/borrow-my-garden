@@ -48,7 +48,7 @@ const Login = ({ navigate }) => {
     <>
       <ChakraProvider>
         <Container>
-                    <Heading color='teal' paddingBottom='100px' align='center'>Borrow My Garden</Heading>
+          <Heading color='teal' paddingBottom='100px' align='center'>Borrow My Garden</Heading>
           <Heading color='teal' paddingBottom='50px' align='center' size='md'>Login Page</Heading>
   
       <form onSubmit={handleSubmit}>

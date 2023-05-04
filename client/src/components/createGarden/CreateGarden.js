@@ -85,7 +85,7 @@ const CreateGarden = ({ navigate }) => {
             {/* this isnt working yet */}
               <option type='text'>Flower</option>
               <option type='text'>Vegetable</option>
-              <option type='text'>No James, not herbs!</option>
+              <option type='text'>Other type of garden</option>
             </Select>
             <Button marginTop='10px' colorScheme="teal" variant="outline" onClick={onSubmit}>Submit</Button>
           </form>  

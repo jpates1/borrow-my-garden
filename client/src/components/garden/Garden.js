@@ -16,11 +16,10 @@ const Garden = ({ garden, detailed }) => {
   return (
     <ChakraProvider>
       <Container className="garden-box" data-cy="garden" key={garden._id}>
-        <Divider />
-        <Card variant='unstyled'>
+        <Card marginY='30px' variant='elevated'>
           <CardBody>
-            <Text className="title">{garden.title}.</Text>
-            <Text pt="2" fontSize="sm">
+            <Text marginBottom='3px' className="title">{garden.title}.</Text>
+            <Text marginBottom='10px' pt="2" fontSize="sm">
               {garden.description}
             </Text>
             {detailed && (
@@ -39,15 +38,12 @@ const Garden = ({ garden, detailed }) => {
           </CardBody>
           {detailed ? null : (
               <Link as={ReactRouterLink} to={`/gardens/${garden._id}`}>
-                <Button colorScheme="teal" variant="outline">
+                <Button margin='15px' colorScheme="teal" variant="outline">
                   More Details
                 </Button>
               </Link>
           )}
               <Link as={ReactRouterLink} to={`/profilechat`}>
-                <Button colorScheme="teal" variant="outline">
-                  Connect
-                </Button>
               </Link>
         </Card>
       </Container>
