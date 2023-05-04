@@ -51,18 +51,44 @@ const Login = ({ navigate }) => {
                     <Heading color='teal' paddingBottom='100px' align='center'>Borrow My Garden</Heading>
           <Heading color='teal' paddingBottom='50px' align='center' size='md'>Login Page</Heading>
   
-      <FormControl onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <FormLabel color='teal'>Email</FormLabel>
         <Input placeholder='Email' id="email" type='text' value={ email } onChange={handleEmailChange} />
         <FormLabel color='teal'>Password</FormLabel>
         <Input placeholder='Password' id="password" type='password' value={ password } onChange={handlePasswordChange} />
         <Button marginTop='10px' colorScheme="teal" variant="outline" role='submit-button' id='submit' type="submit" value="Submit">Sign In</Button>
-      </FormControl>
+      </form>
 
     </Container>
     </ChakraProvider>
     </>
   );
+
+
+
+
+
+
+
+  // return (
+  //   <div>
+  //     <h1>Login Page</h1>
+  //     <form onSubmit={handleSubmit}>
+  //       <input placeholder='Email' id="email" type='text' value={ email } onChange={handleEmailChange} />
+  //       <input placeholder='Password' id="password" type='password' value={ password } onChange={handlePasswordChange} />
+  //       <button role='submit-button' id='submit' type="submit" value="Submit">Sign In</button>
+  //     </form>
+  //   </div>
+  // );
 }
 
 export default Login;
+
+
+
+
+
+
+
+
+
