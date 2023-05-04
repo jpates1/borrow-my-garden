@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 
-import { ChakraProvider, Container, Button, Heading, Divider, Input, Select } from "@chakra-ui/react";
+import { ChakraProvider, Container, Button, Heading, Divider, Input, Select, Card, CardBody, FormLabel, HStack, Center } from "@chakra-ui/react";
 
 
 const CreateGarden = ({ navigate }) => {
@@ -74,21 +74,44 @@ const CreateGarden = ({ navigate }) => {
       <ChakraProvider>
         <Container>
           <Heading  color='teal' paddingBottom='100px' align='center'>Borrow My Garden</Heading>
+          <Card variant="outline">
+            <CardBody>
           <Heading color='teal' paddingBottom='50px' align='center' size='md'>List Your Garden</Heading>
-          <Divider />
+          
           <form onSubmit={onSubmit}>
-            <Input marginBottom='10px' placeholder='Title' id="title" type='text' value={ title } onChange={onChangeTitle} /> 
-            <Input marginBottom='10px' placeholder='Description' id="description" type='text' value={ description } onChange={onChangeDescription} /> 
-            <Input marginBottom='10px' placeholder='Size' id="size" type='text' value={ size } onChange={onChangeSize} /> 
-            <Input marginBottom='10px' placeholder='Postcode' id="postcode" type='text' value={ postcode } onChange={onChangePostcode} /> 
-            <Select placeholder='Type of Garden' type='text' value={ gardenType } onChange={onChangeGardenType}> 
+            <HStack>
+              <FormLabel color='teal'>Title</FormLabel>
+              <Input marginBottom='10px' placeholder='Title' id="title" type='text' value={ title } onChange={onChangeTitle} /> 
+            </HStack>
+            <HStack pt="6">
+              <FormLabel color='teal'>Description</FormLabel>
+              <Input marginBottom='10px' placeholder='Description' id="description" type='text' value={ description } onChange={onChangeDescription} /> 
+            </HStack>
+            <HStack pt="6">
+              <FormLabel color='teal'>Size</FormLabel>
+              <Input marginBottom='10px' placeholder='Size' id="size" type='text' value={ size } onChange={onChangeSize} /> 
+            </HStack>
+            <HStack pt="6">
+              <FormLabel color='teal'>Postcode</FormLabel>
+              <Input marginBottom='10px' placeholder='Postcode' id="postcode" type='text' value={ postcode } onChange={onChangePostcode} />
+            </HStack>
+            <HStack pt="6">
+              <FormLabel color='teal'>Garden Type</FormLabel> 
+              <Select placeholder='Type of Garden' type='text' value={ gardenType } onChange={onChangeGardenType}> 
+            
+            
             {/* this isnt working yet */}
               <option type='text'>Flower</option>
               <option type='text'>Vegetable</option>
               <option type='text'>No James, not herbs!</option>
             </Select>
+            </HStack>
+            <Center>
             <Button marginTop='10px' colorScheme="teal" variant="outline" onClick={onSubmit}>Submit</Button>
-          </form>  
+            </Center>
+          </form>
+          </CardBody>  
+          </Card>
         </Container>
       </ChakraProvider>
     </>
