@@ -56,6 +56,7 @@ const Login = ({ navigate }) => {
     
     <Box pt="100">
       <Center>
+      <Card  variant="outline" stroke="10px" border={"black"} maxW="308px" pt="20" pb="20">
       <Stack spacing="20">
       <VStack as="header" spacing="6" mt="8">
       <img 
@@ -64,7 +65,7 @@ const Login = ({ navigate }) => {
         width={150} 
         height={95} />
       </VStack>
-      <Card bg="#f6f8fa" variant="outline" borderColor="#d8dee4" maxW="308px" pt="20" pb="20">
+      
         <CardBody pr="15" pl="15">
           <form onSubmit={handleSubmit}>
             <Stack spacing="15">
@@ -122,7 +123,7 @@ const Login = ({ navigate }) => {
             </Stack>
           </form>
         </CardBody>
-      </Card>
+      
 
       <Card variant='outline' borderColor='#d0d7de'>
             <CardBody>
@@ -142,6 +143,7 @@ const Login = ({ navigate }) => {
 
 
       </Stack>
+      </Card>
       </Center>
     </Box>
   );
