@@ -28,7 +28,7 @@ const Header = (props) => {
       wrap="wrap"
       w="100%"
     >
-      <Box w="200px">
+      <Box w="200px" pl={"30px"}>
         <Link to={"/"}>
         <img src={Logo} alt='Logo' width={150} height={250} />
         </Link>

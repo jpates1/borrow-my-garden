@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 
-import { ChakraProvider, Container, Button, Heading, Divider, Input, Select, Card, CardBody, FormLabel, HStack, Center } from "@chakra-ui/react";
+import { ChakraProvider, Container, Button, Heading, Divider, Input, Select, Card, CardBody, FormLabel, HStack, Center, SimpleGrid } from "@chakra-ui/react";
 
 
 const CreateGarden = ({ navigate }) => {
@@ -72,14 +72,14 @@ const CreateGarden = ({ navigate }) => {
   return (
     <>
       <ChakraProvider>
-        <Container>
-          <Heading  color='teal' paddingBottom='100px' align='center'>Borrow My Garden</Heading>
+        <Container pt={"100px"}>
           <Card variant="outline">
             <CardBody>
           <Heading color='teal' paddingBottom='50px' align='center' size='md'>List Your Garden</Heading>
           
+          
           <form onSubmit={onSubmit}>
-            <HStack>
+            <HStack >
               <FormLabel color='teal'>Title</FormLabel>
               <Input marginBottom='10px' placeholder='Title' id="title" type='text' value={ title } onChange={onChangeTitle} /> 
             </HStack>
@@ -109,7 +109,9 @@ const CreateGarden = ({ navigate }) => {
             <Center>
             <Button marginTop='10px' colorScheme="teal" variant="outline" onClick={onSubmit}>Submit</Button>
             </Center>
+            
           </form>
+          
           </CardBody>  
           </Card>
         </Container>
