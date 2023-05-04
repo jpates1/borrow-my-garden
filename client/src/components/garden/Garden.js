@@ -4,9 +4,10 @@ import {
   Container,
   Link,
   Button,
-  Divider,
   Card,
   CardBody,
+  UnorderedList,
+  ListItem,
   Text,
 } from "@chakra-ui/react";
 import { Link as ReactRouterLink } from 'react-router-dom';
@@ -16,38 +17,34 @@ const Garden = ({ garden, detailed }) => {
   return (
     <ChakraProvider>
       <Container className="garden-box" data-cy="garden" key={garden._id}>
-        <Divider />
-        <Card variant='unstyled'>
+        <Card marginY='30px' variant='elevated'>
           <CardBody>
-            <Text className="title">{garden.title}.</Text>
-            <Text pt="2" fontSize="sm">
+            <Text fontWeight='medium' marginBottom='3px' className="title">{garden.title}.</Text>
+            <Text marginBottom='10px' pt="2" fontSize="sm">
               {garden.description}
             </Text>
             {detailed && (
               <>
-                <Text pt="2" fontSize="sm">
-                  {garden.size}
-                </Text>
-                <Text pt="2" fontSize="sm">
-                  {garden.postcode}
-                </Text>
-                <Text pt="2" fontSize="sm">
-                  {garden.gardenType}
-                </Text>
+                <UnorderedList marginBottom='15px'>
+                <ListItem><Text pt="2" fontSize="sm">Garden size: {garden.size}
+                </Text></ListItem>
+                <ListItem><Text pt="2" fontSize="sm">Garden postcode: {garden.postcode}
+                </Text></ListItem>
+                <ListItem><Text pt="2" fontSize="sm">Garden Type: {garden.gardenType}
+                </Text></ListItem>
+                </UnorderedList>
+                <Button margin='15px' colorScheme="teal" variant="outline">Connect</Button>
               </>
             )}
           </CardBody>
           {detailed ? null : (
               <Link as={ReactRouterLink} to={`/gardens/${garden._id}`}>
-                <Button colorScheme="teal" variant="outline">
+                <Button margin='15px' colorScheme="teal" variant="outline">
                   More Details
                 </Button>
               </Link>
           )}
               <Link as={ReactRouterLink} to={`/profilechat`}>
-                <Button colorScheme="teal" variant="outline">
-                  Connect
-                </Button>
               </Link>
         </Card>
       </Container>
