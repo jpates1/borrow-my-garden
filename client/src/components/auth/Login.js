@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import {
+  ChakraProvider,
   Flex,
   Box,
   FormControl,
@@ -13,11 +14,9 @@ import {
   Heading,
   Text,
   useColorModeValue,
-  VStack,
-  Card,
-  HStack,
-  CardBody,
-  Center
+  AspectRatio,
+  Image, Card, CardBody, Divider, CardFooter
+  
 } from '@chakra-ui/react';
 import Logo from "./logo-login.png";
 
@@ -53,8 +52,93 @@ const Login = ({ navigate }) => {
   }
 
   return (
-    
-    <Box pt="100">
+    <ChakraProvider>
+    <Flex
+      minH={'100vh'}
+      align={'center'}
+      justify={'center'}
+        bg={useColorModeValue('gray.50', 'gray.800')}>
+        <Card maxW='md' boxShadow={{
+    base: "none", md: "0 0 8px 2px rgba(0, 0, 255, 0.3)",
+  }}>
+          <Stack spacing={8} mx={'auto'} maxW={'lg'} minW={'sm'} py={6} px={6}>
+            <Stack align={'center'}>
+
+          <Image src={Logo}
+              alt='logo'
+              height={100}
+                width={150}
+                my={4}
+          />
+          </Stack>
+          <CardBody>
+          <form onSubmit={handleSubmit}>
+            <FormControl id="email">
+              <FormLabel>Email address</FormLabel>
+              <Input type="email" value={email} onChange={handleEmailChange} />
+            </FormControl>
+            <FormControl id="password">
+              <FormLabel>Password</FormLabel>
+              <Input type="password" value={password} onChange={handlePasswordChange} />
+            </FormControl>
+                <Button
+                  my={6}
+                  colorScheme='teal'
+                type="submit">
+                Log in
+                </Button>
+        </form>
+        </CardBody>
+
+        <CardFooter>
+                <Divider />
+                <Button
+                  my={6}
+                _hover={{
+                  bg: 'blue.500',            
+                }}>
+                Create new account
+                </Button>
+         </CardFooter>
+        </Stack>
+      </Card>
+    </Flex>
+  </ChakraProvider>  
+       
+  );
+}
+
+export default Login;
+
+{/* <Card maxW='sm'>
+      <CardBody>
+        <AspectRatio maxW='200px' ratio={5 / 3}>
+  <Image
+          src={Logo}
+          alt='logo'
+        />
+          </AspectRatio> */}
+
+
+ {/* <Stack mt='6' spacing='3'>
+          <Heading size='md'>Living room Sofa</Heading>
+          <Text>
+            This sofa is perfect for modern tropical spaces, baroque inspired
+            spaces, earthy toned spaces and for people who love a chic design with a
+            sprinkle of vintage design.
+          </Text>
+          <Text color='blue.600' fontSize='2xl'>
+            $450
+          </Text>
+        </Stack>
+      </CardBody>
+    </Card> */}
+    {/* </Flex> */}
+
+
+
+
+{/* <Box pt="100">
       <Center>
       <Card  variant="outline" stroke="10px" border={"black"} maxW="308px" pt="20" pb="20">
       <Stack spacing="20">
@@ -119,12 +203,9 @@ const Login = ({ navigate }) => {
               >
               Sign In
               </Button>
-
             </Stack>
           </form>
-        </CardBody>
-      
-
+        </CardBody>     
       <Card variant='outline' borderColor='#d0d7de'>
             <CardBody>
               <Center>
@@ -137,25 +218,8 @@ const Login = ({ navigate }) => {
               </Center>
             </CardBody>
         </Card>
-
-
-
-
-
       </Stack>
       </Card>
       </Center>
-    </Box>
-  );
-}
-
-export default Login;
-
-
-
-
-
-
-
-
-
+    </Box> 
+   */}
