@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { useLocation } from "react-router-dom";
 
 
-const IsNavBarNeeded = ({ children }) => {
+const NavBarFalse = ({ children }) => {
 
   const location = useLocation();
 
@@ -25,4 +25,4 @@ const IsNavBarNeeded = ({ children }) => {
   )
 }
 
-export default IsNavBarNeeded;
+export default NavBarFalse;

@@ -5,7 +5,7 @@ import SignUp from "./components/signup/SignUp";
 import Login from "./components/auth/Login";
 import LandingPage from "./components/landingpage/LandingPage";
 import CreateGarden from "./components/createGarden/CreateGarden";
-import IsNavBarNeeded from "./components/isnavbarneeded/IsNavBarNeeded";
+import NavBarFalse from "./components/navbarfalse/NavBarFalse";
 import NavBar from "./components/navbar/NavBar";
 import AllGardensView from "./components/gardenViews/AllGardensView";
 import SingleGardenView from "./components/gardenViews/SingleGardenView";
@@ -20,9 +20,9 @@ const App = () => {
  return (
    <div>
     
-    <IsNavBarNeeded>
+    <NavBarFalse> 
       <NavBar />
-    </IsNavBarNeeded> 
+    </NavBarFalse>  
      <Routes>
        <Route path="/signup" element={<SignUp navigate={navigate} />} />
        <Route path="/login" element={<Login navigate={navigate} />} />
