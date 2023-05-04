@@ -75,6 +75,8 @@ const CreateGarden = ({ navigate }) => {
         <Container pt={"100px"}>
           <Card variant="outline">
             <CardBody>
+          
+
           <Heading color='teal' paddingBottom='50px' align='center' size='md'>List Your Garden</Heading>
           
           
@@ -103,7 +105,7 @@ const CreateGarden = ({ navigate }) => {
             {/* this isnt working yet */}
               <option type='text'>Flower</option>
               <option type='text'>Vegetable</option>
-              <option type='text'>No James, not herbs!</option>
+              <option type='text'>Other type of garden</option>
             </Select>
             </HStack>
             <Center>

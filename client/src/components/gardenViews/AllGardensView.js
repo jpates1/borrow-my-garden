@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Garden from "../garden/Garden";
+import { ChakraProvider, Heading, Container } from "@chakra-ui/react";
 
 
 const AllGardensView = ({ navigate }) => {
@@ -31,6 +32,12 @@ const AllGardensView = ({ navigate }) => {
 
   return (
     <>
+    <ChakraProvider>
+        <Container>
+          
+          <Heading color='teal' paddingBottom='50px' align='center' size='md'>Choose Your Garden</Heading>
+          </Container>
+          </ChakraProvider>
       {gardens.map((garden) => (
         <div key={garden._id}>
           <Garden

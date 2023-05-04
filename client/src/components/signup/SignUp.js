@@ -53,7 +53,7 @@ const SignUp = ({ navigate }) => {
     <>
       <ChakraProvider>
         <Container>
-          <Heading color='teal' paddingBottom='100px' align='center'>Borrow My Garden</Heading>
+          
           <Heading color='teal' paddingBottom='50px' align='center' size='md'>Sign up to Borrow My Garden!</Heading>
         
     
