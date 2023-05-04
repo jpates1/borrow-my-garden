@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { ChakraProvider, 
-  Container, 
+import { Link } from "react-router-dom";
+
+import {
+  ChakraProvider, 
   Button, 
-  Heading, 
+  Flex,
   FormControl,
-  Input,
   FormLabel,
-  Stack, 
-  Card, 
-  CardBody,
-  Text,
-  Image } from "@chakra-ui/react";
+  Input,
+  Stack,
+  useColorModeValue,
+  Image,
+  Card,
+} from "@chakra-ui/react";
+ import Logo from "../auth/logo-login.png";
+
 
 const SignUp = ({ navigate }) => {
   const [username, setUsername] = useState('');
@@ -50,27 +54,34 @@ const SignUp = ({ navigate }) => {
   };
 
   return (
-    <>
-      <ChakraProvider>
-        <Container>
-          
-          <Heading color='teal' paddingBottom='50px' align='center' size='md'>Sign up to Borrow My Garden!</Heading>
-        
-    
-        <FormControl onSubmit={onSubmit}>
-          <FormLabel color='teal'>Username</FormLabel>
-          <Input placeholder='Username' type="text" value={username} onChange={onChangeUsername} />
-          <FormLabel color='teal'>Email</FormLabel>
-          <Input placeholder='Email' type="email" value={email} onChange={onChangeEmail} />
-          <FormLabel color='teal'>Password</FormLabel>
-          <Input placeholder='Password' type="password" value={password} onChange={onChangePassword} />
-          <Button marginTop='10px' colorScheme="teal" variant="outline" onClick={onSubmit}>Sign Up</Button>
-        </FormControl>
-        </Container>
-        </ChakraProvider>
-      </>
-
+    <ChakraProvider>
+      <Flex minH={'100vh'} align={'center'} justify={'center'} bg={useColorModeValue('gray.50', 'gray.800')}>
+        <Card maxW='md' boxShadow="0px 0px 10px gray" >
+          <Stack spacing={8} mx={'auto'} maxW={'lg'} minW={'sm'} py={6} px={6}>
+            <Stack align={'center'}>
+              <Image src={Logo} alt='logo' height={100} width={150} my={4} />
+            </Stack>  
+          <Stack spacing={4}>      
+            <FormControl onSubmit={onSubmit}>
+            <FormLabel>Username</FormLabel>
+            <Input type="text" value={username} onChange={onChangeUsername} />
+            <FormLabel>Email</FormLabel>
+            <Input type="email" value={email} onChange={onChangeEmail} />
+            <FormLabel>Password</FormLabel>
+            <Input type="password" value={password} onChange={onChangePassword} />
+            <Stack spacing={8}>
+              <Button my={4} py={4} onClick={onSubmit} colorScheme='teal' type="submit">
+                Sign up
+              </Button>
+            </Stack>
+            </FormControl>   
+          </Stack>
+          </Stack>
+        </Card>
+      </Flex>
+    </ChakraProvider>        
   );
 };
 
 export default SignUp;
+
